@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SPRINK - Toko Bunga</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+          <div class="header-main">
+            <img src="Photo/PinkLogow.png" alt="Logo SPRINK" class="logo">
+            <h1>SPRINK</h1>
+          </div>
+          <nav class="nav-bar">
+            <a href="index.html">Beranda</a>
+            <a href="about.html">Tentang Kami</a>
+            <a href="products.html">Produk</a>
+            <a href="contact.html">Kontak</a>
+          </nav>
+        </div>
+      </header>      
+
+  <section class="hero">
+    <h2>SPRINK</h2>
+    <p>SPRINK adalah toko bunga yang menyediakan rangkaian bunga segar, cantik, dan penuh makna untuk segala momen spesial Anda. Kami menghadirkan pilihan terbaik dengan sentuhan personal.</p>
+    <a href="products.html" class="btn">Belanja Sekarang</a>
+    <div class="hero-indicators">
+        <span class="dot active" data-index="0"></span>
+        <span class="dot" data-index="1"></span>
+        <span class="dot" data-index="2"></span>
+      </div>
+     </section>
+
+  <section class="product-page">
+    <h2>Rangkaian Bunga Kami</h2>
+    <div class="product-list">
+      <div class="product">
+        <img src="Photo/bouquet1.png" alt="Bouquet Mawar">
+        <h4>Mawar</h4>
+        <p>Rp150.000</p>
+      </div>
+      <div class="product">
+        <img src="Photo/bouquet2.png" alt="Bouquet Lily Cantik">
+        <h4>Lily Cantik</h4>
+        <p>Rp180.000</p>
+      </div>
+      <div class="product">
+        <img src="Photo/bouquet3.png" alt="Bouquet Mix Bloom">
+        <h4>Mix Bloom</h4>
+        <p>Rp200.000</p>
+      </div>
+      <div class="product">
+        <img src="Photo/bouquet4.png" alt="Bouquet Tulip">
+        <h4>Tulip</h4>
+        <p>Rp120.000</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="gallery-section">
+    <h2>Galeri Foto</h2>
+    <div class="gallery-container">
+        <div class="gallery-item" data-alt="Festival Bunga SPRINK">
+            <img src="Photo/gallery2.jpeg" alt="Festival Bunga SPRINK">
+        </div> 
+        <div class="gallery-item" data-alt="Workshop Merangkai Bunga">
+            <img src="Photo/gallery3.jpeg" alt="Workshop Merangkai Bunga">
+        </div>
+        <div class="gallery-item" data-alt="Festival Bunga SPRINK">
+            <img src="Photo/gallery4.jpeg" alt="Festival Bunga SPRINK">
+        </div>     
+    </div>
+  </section>  
+
+  <section class="schedule-section">
+    <h2>Jadwal Acara SPRINK</h2>
+    <div class="schedule-container">
+      <div class="schedule-card">
+        <h3>10 Juli 2025</h3>
+        <p>09.00 - Pembukaan Festival Bunga</p>
+        <p>10.00 - Workshop Merangkai Bunga</p>
+      </div>
+      <div class="schedule-card">
+        <h3>11 Juli 2025</h3>
+        <p>08.30 - Bazaar dan Stand Florist</p>
+        <p>13.00 - Live Music dan Florist Talkshow</p>
+      </div>
+      <div class="schedule-card">
+        <h3>12 Juli 2025</h3>
+        <p>09.00 - Lomba Merangkai Bunga</p>
+        <p>16.00 - Penutupan dan Pengumuman Pemenang</p>
+      </div>
+    </div>
+  </section>  
+
+  <footer>
+    <p>© 2025 SPRINK. Desain oleh kamu dengan cinta 💐</p>
+  </footer>
+
+  <script>
+    const heroSection = document.querySelector('.hero');
+    const wallpapers = [
+      'Photo/wallpaper01.jpeg',
+      'Photo/wallpaper02.jpeg',
+      'Photo/wallpaper03.jpeg'
+    ];
+    const dots = document.querySelectorAll('.dot');
+    let currentIndex = 0;
+    let interval;
+  
+    function showWallpaper(index) {
+      currentIndex = index;
+      heroSection.style.backgroundImage = `url('${wallpapers[index]}')`;
+      dots.forEach(dot => dot.classList.remove('active'));
+      dots[index].classList.add('active');
+    }
+  
+    // Ganti otomatis tiap 5 detik
+    function startSlider() {
+      interval = setInterval(() => {
+        currentIndex = (currentIndex + 1) % wallpapers.length;
+        showWallpaper(currentIndex);
+      }, 5000);
+    }
+  
+    // Klik manual
+    dots.forEach(dot => {
+      dot.addEventListener('click', () => {
+        clearInterval(interval); // hentikan autoplay saat diklik
+        showWallpaper(Number(dot.dataset.index));
+        startSlider(); // mulai lagi autoplay setelah klik
+      });
+    });
+  
+    // Mulai pertama kali
+    showWallpaper(0);
+    startSlider();
+  </script>  
+  
+</body>
+</html>

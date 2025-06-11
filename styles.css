@@ -1,0 +1,545 @@
+/* General */
+body {
+    margin: 0;
+    font-family: 'Quicksand', sans-serif;
+    background-color: #fff0f5;
+    color: #333;
+  }
+  
+  h1, h2, h3, h4 {
+    color: #cc3366;
+  }
+  
+  header {
+    background-color: #ffe6f0; /* warna pink muda seperti pada gambar */
+    padding: 10px 20px;
+  }
+  
+  .header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .header-main {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .logo {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .header-main h1 {
+    font-family: 'Quicksand', sans-serif;
+    color: #cc3366;
+    font-size: 24px;
+    margin: 0;
+  }
+  
+  .nav-bar {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .nav-bar a {
+    font-family: 'Quicksand', sans-serif;
+    color: #cc3366;
+    text-decoration: none;
+    font-weight: 700;
+    padding: 8px 12px;
+    border-bottom: 2px solid transparent;
+  }
+  
+  .nav-bar a:hover {
+    border-bottom: 2px solid #cc3366;
+  }  
+  
+  section {
+    padding: 2rem;
+    max-width: 900px;
+    margin: auto;
+  }
+
+  .section-heading {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    position: relative;
+    margin: 3rem auto 2rem;
+    color: #bd5467;
+  }
+  
+  .section-heading::before,
+  .section-heading::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 30%;
+    height: 2px;
+    background-color: #bd5467; 
+  }
+  
+  .section-heading::before {
+    left: 0;
+  }
+  
+  .section-heading::after {
+    right: 0;
+  }  
+  
+  footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #ffcce6;
+    color: #800040;
+    margin-top: 2rem;
+    font-weight: bold;
+  }
+  
+  .btn {
+    display: inline-block;
+    background-color: #cc3366; /* warna tombol sesuai gambar */
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 999px; /* buat full rounded */
+    font-family: 'Quicksand', sans-serif; /* samakan font */
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn:hover {
+    background-color: #a82c57; /* efek hover */
+  }
+
+
+  /* About Page */
+  .about ul {
+    list-style: square;
+    padding-left: 1.5rem;
+  }
+
+  .visi-misi {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 40px 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  
+  .card {
+    flex: 1;
+    background-color: #ffe6f0;
+    border: 2px solid #f2a1b0;
+    padding: 20px;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  }
+  
+  .card:hover {
+    background-color: #f2a1b0;
+    color: white;
+    border-color: #cc3366;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  }
+  
+  .card h3 {
+    margin-top: 0;
+    font-family: 'Quicksand', sans-serif;
+  }
+  
+  .card p,
+  .card ul {
+    margin: 10px 0 0 0;
+    font-family: 'Quicksand', sans-serif;
+  }
+  
+  .card ul {
+    padding-left: 20px;
+  }  
+  
+  /* Product Page */
+  .product-page .product-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+  }
+  
+  .product-page .product {
+    background-color: white;
+    padding: 1rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(242, 161, 176, 0.3); /* bayangan dengan nuansa pink */
+    text-align: center;
+    transition: box-shadow 0.3s ease, background-color 0.3s ease;
+    border: 1px solid #f2a1b0; /* border katalog */
+  }
+
+  .product img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: none; 
+  }
+  
+  .product-page .product:hover {
+    background-color: #fce6ea; /* latar katalog saat hover */
+    box-shadow: 0 4px 12px rgba(242, 161, 176, 0.6); /* bayangan saat hover */
+    cursor: pointer;
+  }
+
+  /* Contact Page */
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  
+  input, textarea, button {
+    padding: 0.75rem;
+    border: 1px solid #cc6699;
+    border-radius: 8px;
+    font-family: 'Quicksand', sans-serif;
+  }
+  
+  button {
+    background-color: #ff99cc;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #cc3366;
+  }
+  
+  .contact-info {
+    margin-top: 2rem;
+    font-size: 0.95rem;
+    color: #555;
+  }
+  
+  /* Product Showcase Section on index.html */
+  .product-showcase {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+  
+  .product-showcase img {
+    width: 150px;
+    height: auto;
+    border-radius: 16px;
+    background-color: #93778f;
+    padding: 1rem;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    object-fit: cover;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+
+  .about-team {
+    text-align: center;
+    padding: 2rem;
+  }
+  
+  .team-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+  
+  .team-member {
+    width: 150px;
+    text-align: center;
+  }
+  
+  .team-member img {
+    width: 100%;
+    border-radius: 50%;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+  
+  .team-member h4 {
+    margin: 0.5rem 0 0.25rem;
+    color: #cc3366;
+  }
+  
+  .team-member p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #555;
+  }
+
+  .hero {
+    background-image: url('Photo/wallpaper03.jpeg'); /* ganti ke .png kalau perlu */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  
+    padding: 4rem 2rem;
+    margin: 2rem auto;              /* posisi section ke tengah halaman */
+    width: 90%;
+    max-width: 1000px;              /* agar tidak terlalu lebar di layar besar */
+  
+    text-align: center;
+    color: white;
+  
+    border-radius: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  }
+  
+  .hero h2 {
+    font-size: 3.5rem;     /* Bisa disesuaikan, misal 4rem kalau ingin lebih besar lagi */
+    font-weight: 700;
+    color: white;          /* Membuat teks menjadi putih */
+    margin-bottom: 1rem;
+    text-align: center;    /* Agar tetap rapi di tengah */
+  }
+
+  .hero p {
+    color: #bd5467; 
+    font-size: 1rem;
+    font-weight: 500;
+    text-align: center;
+    margin: 1.5rem auto;
+    padding: 1rem 1.5rem;
+    max-width: 600px;
+  
+    background-color: rgba(255, 255, 255, 0.712);
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  }
+  
+  .hero-indicators {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+  }
+  
+  .dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #fff;
+    opacity: 0.5;
+    cursor: pointer;
+    transition: opacity 0.3s, transform 0.3s;
+  }
+  
+  .dot:hover {
+    transform: scale(1.2);
+  }
+  
+  .dot.active {
+    opacity: 1;
+    background-color: #f2a1b0;
+  }
+
+  .schedule-section {
+    text-align: center;
+    margin: 4rem auto;
+    padding: 2rem;
+  }
+  
+  .schedule-section h2 {
+    font-size: 2rem;
+    color: #bd5467;
+    margin-bottom: 2rem;
+  }
+  
+  .schedule-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .schedule-card {
+    background-color: #ffe6ec;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    border: 2px solid rgba(242, 161, 176, 0.4); /* pink tua transparan */
+    transition: background-color 0.3s ease;
+  }  
+  
+  .schedule-card:hover {
+    background-color: #f2a1b0;
+    color: white;
+  }  
+  
+  .gallery-section {
+    padding: 3rem 2rem;
+    text-align: center;
+  }
+  
+  .gallery-section h2 {
+    font-size: 2.2rem;
+    color: #bd5467;
+    margin-bottom: 1.5rem;
+  }
+  
+  .gallery-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  
+  .gallery-container img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    object-fit: cover;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .gallery-container img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  }
+
+  .gallery-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  
+  .gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+  }
+  
+  .gallery-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 12px;
+    object-fit: cover;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .gallery-item:hover img {
+    transform: scale(1.03);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .gallery-item::after {
+    content: attr(data-alt);  /* ambil dari data-alt, bukan alt! */
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 0.8rem 1rem;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    font-size: 0.95rem;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    box-sizing: border-box;
+  }
+  
+  .gallery-item:hover::after {
+    opacity: 1;
+  }
+  
+  @media (max-width: 768px) {
+    .header-container {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+  
+    .nav-bar {
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: flex-start;
+    }
+  
+    .section-heading::before,
+    .section-heading::after {
+      display: none;
+    }
+  
+    .visi-misi {
+      flex-direction: column;
+      padding: 1rem;
+    }
+  
+    .product-page .product-list {
+      grid-template-columns: 1fr;
+    }
+  
+    .product-showcase {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .hero h2 {
+      font-size: 2rem;
+    }
+  
+    .hero p {
+      font-size: 0.9rem;
+      padding: 0.75rem 1rem;
+    }
+  
+    .team-list {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .team-member {
+      width: 100%;
+      max-width: 200px;
+    }
+  
+    .schedule-container {
+      grid-template-columns: 1fr;
+    }
+  
+    .gallery-container {
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 0.75rem;
+    }
+  
+    form {
+      padding: 0 1rem;
+    }
+  
+    input,
+    textarea,
+    button {
+      width: 100%;
+    }
+  }
+  
+  
+  
+  
+  
+  

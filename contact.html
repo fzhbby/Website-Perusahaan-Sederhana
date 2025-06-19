@@ -21,22 +21,31 @@
             <a href="contact.html">Kontak</a>
           </nav>
         </div>
-      </header>      
+      </header>    
 
   <section class="contact">
     <h2>Hubungi Kami</h2>
     <p>Kami siap menjawab pertanyaan dan menerima pesanan spesial darimu!</p>
-    <form>
+    <form id="contactForm">
       <label for="name">Nama:</label>
       <input type="text" id="name" name="name" required>
 
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" required>
+      <label for="province">Provinsi:</label>
+      <select id="province" name="province" required>
+        <option value="">-- Pilih Provinsi --</option>
+        <option value="DKI Jakarta">DKI Jakarta</option>
+        <option value="Jawa Barat">Jawa Barat</option>
+      </select>
+
+      <label for="city">Kota:</label>
+      <select id="city" name="city" required>
+        <option value="">-- Pilih Kota --</option>
+      </select>
 
       <label for="message">Pesan:</label>
       <textarea id="message" name="message" rows="5" required></textarea>
 
-      <button type="submit">Kirim</button>
+      <button type="submit">Kirim via WhatsApp</button>
     </form>
 
     <div class="contact-info">
@@ -45,10 +54,58 @@
       <p><strong>Alamat:</strong> Jl. Mawar Indah No.88, Jakarta</p>
       <p><strong>Instagram:</strong> @sprinkflorist </p>
     </div>
+
+      <h3 class="map-title">Lokasi Toko Kami</h3>
+  <div id="map" style="height: 300px;"></div>
   </section>
 
   <footer>
     <p>© 2025 SPRINK. Kirim cinta lewat bunga 🌷</p>
   </footer>
+
+  <!-- Tambahkan library eksternal -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+  <!-- Script untuk interaktivitas -->
+  <script>
+    const cityOptions = {
+      "DKI Jakarta": ["Jakarta Pusat", "Jakarta Barat", "Jakarta Selatan", "Jakarta Timur", "Jakarta Utara"],
+      "Jawa Barat": ["Bandung", "Bekasi", "Depok", "Bogor", "Cimahi"]
+    };
+
+    $('#province').on('change', function() {
+      const prov = $(this).val();
+      const cities = cityOptions[prov] || [];
+      $('#city').empty().append('<option value="">-- Pilih Kota --</option>');
+      cities.forEach(city => {
+        $('#city').append(`<option value="${city}">${city}</option>`);
+      });
+    });
+
+    // Kirim ke WhatsApp
+    $('#contactForm').on('submit', function(e) {
+      e.preventDefault();
+      const name = $('#name').val();
+      const prov = $('#province').val();
+      const city = $('#city').val();
+      const message = $('#message').val();
+      const fullMsg = `Halo! saya ${name} dari ${city}, ${prov}. ${message}`;
+      const encodedMsg = encodeURIComponent(fullMsg);
+      window.open(`https://wa.me/6281282135908?text=${encodedMsg}`, '_blank'); 
+    });
+
+    
+    // Peta dengan Leaflet
+    const map = L.map('map').setView([-6.2, 106.816666], 13); // Koordinat Jakarta
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; OpenStreetMap'
+    }).addTo(map);
+
+    L.marker([-6.2, 106.816666]).addTo(map)
+      .bindPopup('SPRINK Florist di sini!')
+      .openPopup();
+  </script>
 </body>
-</html>

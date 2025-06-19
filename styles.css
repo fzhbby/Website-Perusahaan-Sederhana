@@ -538,7 +538,83 @@ body {
     }
   }
   
-  
+  /* Penyesuaian tambahan untuk halaman Contact */
+#province,
+#city,
+#name,
+#message {
+  width: 100%;
+  font-size: 1rem;
+  background-color: #fffafc;
+  border: 1px solid #f2a1b0;
+  border-radius: 8px;
+  padding: 0.75rem;
+  font-family: 'Quicksand', sans-serif;
+}
+
+#province:focus,
+#city:focus,
+#name:focus,
+#message:focus {
+  outline: none;
+  border-color: #cc3366;
+  box-shadow: 0 0 5px rgba(204, 51, 102, 0.3);
+}
+
+label {
+  font-weight: bold;
+  color: #cc3366;
+}
+
+form button[type="submit"] {
+  background-color: #cc3366;
+  border: none;
+  font-size: 1rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 999px;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: bold;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+.map-title {
+  margin-top: 2rem;
+  font-size: 1.5rem;
+  color: #cc3366;
+  text-align: center;
+  font-weight: bold;
+}
+
+form button[type="submit"]:hover {
+  background-color: #a82c57;
+}
+
+/* Leaflet map styling */
+#map {
+  width: 100%;
+  height: 300px;
+  border: 2px solid #f2a1b0;
+  border-radius: 12px;
+  margin-top: 2rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Responsif khusus elemen baru */
+@media (max-width: 768px) {
+  #map {
+    height: 200px;
+  }
+
+  #province,
+  #city,
+  #name,
+  #message,
+  form button[type="submit"] {
+    font-size: 0.95rem;
+  }
+}
+
   
   
   

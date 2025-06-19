@@ -11,7 +11,7 @@ body {
   }
   
   header {
-    background-color: #ffe6f0; /* warna pink muda seperti pada gambar */
+    background-color: #ffe6f0; 
     padding: 10px 20px;
   }
   
@@ -103,11 +103,11 @@ body {
   
   .btn {
     display: inline-block;
-    background-color: #cc3366; /* warna tombol sesuai gambar */
+    background-color: #cc3366; 
     color: white;
     padding: 0.75rem 1.5rem;
-    border-radius: 999px; /* buat full rounded */
-    font-family: 'Quicksand', sans-serif; /* samakan font */
+    border-radius: 999px; 
+    font-family: 'Quicksand', sans-serif; 
     font-weight: bold;
     text-decoration: none;
     text-align: center;
@@ -115,7 +115,7 @@ body {
   }
   
   .btn:hover {
-    background-color: #a82c57; /* efek hover */
+    background-color: #a82c57; 
   }
 
 
@@ -288,15 +288,15 @@ body {
   }
 
   .hero {
-    background-image: url('Photo/wallpaper03.jpeg'); /* ganti ke .png kalau perlu */
+    background-image: url('Photo/wallpaper03.jpeg'); 
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
   
     padding: 4rem 2rem;
-    margin: 2rem auto;              /* posisi section ke tengah halaman */
+    margin: 2rem auto;              
     width: 90%;
-    max-width: 1000px;              /* agar tidak terlalu lebar di layar besar */
+    max-width: 1000px;             
   
     text-align: center;
     color: white;
@@ -306,11 +306,11 @@ body {
   }
   
   .hero h2 {
-    font-size: 3.5rem;     /* Bisa disesuaikan, misal 4rem kalau ingin lebih besar lagi */
+    font-size: 3.5rem;     
     font-weight: 700;
-    color: white;          /* Membuat teks menjadi putih */
+    color: white;          
     margin-bottom: 1rem;
-    text-align: center;    /* Agar tetap rapi di tengah */
+    text-align: center;    
   }
 
   .hero p {
@@ -376,7 +376,7 @@ body {
     border-radius: 12px;
     padding: 1.5rem;
     box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    border: 2px solid rgba(242, 161, 176, 0.4); /* pink tua transparan */
+    border: 2px solid rgba(242, 161, 176, 0.4); 
     transition: background-color 0.3s ease;
   }  
   
@@ -448,7 +448,7 @@ body {
   }
   
   .gallery-item::after {
-    content: attr(data-alt);  /* ambil dari data-alt, bukan alt! */
+    content: attr(data-alt);  
     position: absolute;
     bottom: 0;
     left: 0;
@@ -538,7 +538,7 @@ body {
     }
   }
   
-  /* Penyesuaian tambahan untuk halaman Contact */
+  /* Halaman Contact */
 #province,
 #city,
 #name,

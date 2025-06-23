@@ -34,7 +34,7 @@
       </div>
      </section>
 
-  <section class="product-page">
+  <aside class="product-page">
     <h2>Spesial Hari Ini: Rangkaian Bunga Kami</h2>
     <div class="product-list">
       <div class="product">
@@ -58,7 +58,7 @@
         <p>Rp120.000</p>
       </div>
     </div>
-  </section>
+  </aside>
 
   <section class="gallery-section">
     <h2>Galeri Foto</h2>
@@ -96,9 +96,19 @@
     </div>
   </section>  
 
-  <footer>
-    <p>© 2025 SPRINK. Desain oleh kamu dengan cinta 💐</p>
+<footer>
+    <p>© 2025 SPRINK. Desain oleh kamu dengan cinta 💐 | 
+      <a href="#" id="openPrivacy">Kebijakan Privasi</a> | 
+      <a href="#" id="openTerms">Syarat & Ketentuan</a>
+    </p>
   </footer>
+  <!-- Modal Overlay -->
+  <div id="modalOverlay" class="modal-overlay">
+    <div class="modal-content">
+      <span id="closeModal" class="close-button">&times;</span>
+      <div id="modalText"></div>
+    </div>
+  </div>
 
   <script>
     const heroSection = document.querySelector('.hero');
@@ -138,7 +148,52 @@
     // Mulai pertama kali
     showWallpaper(0);
     startSlider();
-  </script>  
+  </script>
+  
+  <script>
+  const modalOverlay = document.getElementById('modalOverlay');
+  const modalText = document.getElementById('modalText');
+  const closeModal = document.getElementById('closeModal');
+
+  const privacyContent = `
+    <h2>Kebijakan Privasi</h2>
+    <p>SPRINK menjaga privasi Anda dengan serius. Informasi yang Anda berikan seperti nama, email, dan alamat hanya digunakan untuk keperluan pemesanan dan layanan kami. Kami tidak akan membagikan data Anda kepada pihak ketiga tanpa izin Anda.</p>
+    <p>Seluruh data disimpan dengan aman dan hanya digunakan sesuai kebutuhan operasional toko.</p>
+  `;
+
+  const termsContent = `
+    <h2>Syarat & Ketentuan</h2>
+    <p>Dengan menggunakan layanan SPRINK, Anda menyetujui bahwa:</p>
+    <ul>
+      <li>Informasi pemesanan harus valid dan lengkap.</li>
+      <li>Pesanan akan diproses setelah pembayaran dikonfirmasi.</li>
+      <li>Tidak diperbolehkan menyalin atau menggunakan konten situs tanpa izin.</li>
+    </ul>
+    <p>SPRINK berhak mengubah syarat & ketentuan sewaktu-waktu sesuai kebijakan.</p>
+  `;
+
+  document.getElementById('openPrivacy').addEventListener('click', function(e) {
+    e.preventDefault();
+    modalText.innerHTML = privacyContent;
+    modalOverlay.style.display = 'flex';
+  });
+
+  document.getElementById('openTerms').addEventListener('click', function(e) {
+    e.preventDefault();
+    modalText.innerHTML = termsContent;
+    modalOverlay.style.display = 'flex';
+  });
+
+  closeModal.addEventListener('click', () => {
+    modalOverlay.style.display = 'none';
+  });
+
+  window.addEventListener('click', (e) => {
+    if (e.target === modalOverlay) {
+      modalOverlay.style.display = 'none';
+    }
+  });
+</script>
   
 </body>
 </html>
